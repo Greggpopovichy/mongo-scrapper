@@ -18,6 +18,11 @@ mongoose.connect('mongodb://localhost/mongoScraper', {
     useMongoClient:true
 });
 
+var exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 //Routes
 
 app.get("/", function(req, res) {
