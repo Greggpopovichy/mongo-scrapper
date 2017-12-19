@@ -21,7 +21,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set('view engine', 'handlebars'); // set up hbs for templating
 
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/mongoScraper', {
+mongoose.connect('mongodb://localhost/mongoscraper', {
     useMongoClient:true
 });
 
