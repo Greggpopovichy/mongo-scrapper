@@ -10,7 +10,7 @@ $.getJSON("/articles", function(data) {
 
 $.getJSON('/notes', function(data){
     for(var i = 0; i < data.length; i++){
-        $('#saved_notes').append("<h5 data-id='"+ data[i]._id + "'>" + data[i].title + "<br />" + data[i].body + "</h5>");
+        $('#saved_notes').append('<button id=deletebutton>x</button>' + "<h5 data-id='"+ data[i]._id + "'>" + data[i].title + "<br />" + data[i].body + "<br>" + "</h5>");
     }
 });
 
@@ -25,7 +25,7 @@ $(document).on("click", "p", function(){
         .done(function(data){
             $("#notes").append("<p>" + data.title + "</p>");
             // An input to enter a new title
-            $("#notes").append("<input id='titleinput' name='title' >");
+            $("#notes").append("<input id='titleinput' name='title' placeholder='Note Title'>");
             // A textarea to add a new note body
             $("#notes").append("<textarea id='bodyinput' name='body'></textarea>");
             // A button to submit a new note, with the id of the article saved to it
@@ -72,5 +72,20 @@ $(document).on('click', '#saved_notes_btn', function(){
     })
     .done(function(data){
         console.log(data);
+    });
+});
+
+$(document).on("click", "#deletebutton", function(){
+    var selected = $(this).parent();
+    $.ajax({
+        method: 'GET',
+        url: '/notes/' + selected.attr("data-id"),
+        success: function(response) {
+            // Remove the p-tag from the DOM
+            selected.remove();
+            // Clear the note and title inputs
+            $("#titleinput").val("");
+            $("#bodyinput").val("");
+        }
     });
 });

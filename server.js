@@ -123,6 +123,53 @@ app.get("/notes/", function(req, res) {
         });
 });
 
+//update route
+// app.update("/notes/:id", function(req,res){
+//     db.Note
+//         .update({
+//             "_id": mongojs.ObjectId(req.params.id)
+//         },
+//             {
+//                 // Set the title, note and modified parameters
+//                 // sent in the req's body.
+//                 $set: {
+//                     "title": req.body.title,
+//                     "body": req.body.body,
+//                     "modified": Date.now()
+//                 }
+//             }, function(err, edited){
+//                 if (err) {
+//                     console.log(err);
+//                     res.send(err);
+//                 }else{
+//                     console.log(edited);
+//                     //this may need to render
+//                     res.send("savedNotes", edited);
+//                 }
+//             }
+//
+//         )
+//
+// });
+//delete route
+app.delete("/notes/:id", function(req,res){
+    db.Note.remove({
+        "_id": mongojs.ObjectID(req.params.id)
+    }, function(error, removed) {
+        // Log any errors from mongojs
+        if (error) {
+            console.log(error);
+            res.send(error);
+        }
+        // Otherwise, send the mongojs response to the browser
+        // This will fire off the success function of the ajax request
+        else {
+            console.log(removed);
+            res.send(removed);
+        }
+    });
+});
+
 app.get('/savedNotes', function(req,res){
     res.render('savedNotes', {data:req.data});
 });

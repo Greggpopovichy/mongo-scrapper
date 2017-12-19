@@ -60,3 +60,13 @@ body {
 .container-fluid{
     padding-top: 50px;
 }
+
+.card-title{
+    padding-top: 5px;
+    text-align: center;
+}
+
+#deletebutton{
+    display: block;
+    float:right;
+}
