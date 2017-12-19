@@ -10,7 +10,11 @@ var NoteSchema = new Schema({
     title: String,
     // `body` is of type String
     body: String
-});
+    },
+    {
+        versionKey: false // You should be aware of the outcome after set to false
+    }
+    );
 
 // This creates our model from the above schema, using mongoose's model method
 var Note = mongoose.model("Note", NoteSchema);

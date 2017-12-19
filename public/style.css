@@ -1,3 +1,62 @@
-body{
+body {
+    /*background-image: url("http://globalmedicalco.com/photos/globalmedicalco/18/85946.jpg");*/
+    /*background-repeat: no-repeat;*/
+    /*height: 100vh;*/
+    /*background-size: cover;*/
+}
+
+#content-container{
     background-image: url("http://globalmedicalco.com/photos/globalmedicalco/18/85946.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+
+#articleContainer{
+    height: 60%;
+    overflow: scroll;
+}
+
+#noteContainer{
+    height:30%;
+    text-align: center;
+}
+
+#noteImage{
+    background-image: url("http://globalmedicalco.com/photos/globalmedicalco/18/85946.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+}
+
+.card{
+    background-color: rgba(255,255,255, 0.9);
+}
+
+.savedCommentsLink{
+    color: white;
+}
+
+#articles{
+
+}
+
+.siteTitle{
+    color:black;
+    text-shadow: 1px 1px 0px grey;
+    text-align: center;
+}
+
+#saved_notes{
+    overflow: scroll;
+}
+
+#saved_notes_btn{
+    background-color: red;
+    color:white;
+    margin-bottom: 10px;
+}
+
+.container-fluid{
+    padding-top: 50px;
 }
