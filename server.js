@@ -31,10 +31,8 @@ var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 
 // Connection URL. This is where your mongodb server is running.
-
 //(Focus on This Variable)
 var url = 'mongodb://carrendale:charlie@ds141796.mlab.com:41796/mongoscraper';
-//(Focus on This Variable)
 
 // Use connect method to connect to the Server
 MongoClient.connect(url, function (err, db) {
@@ -46,7 +44,7 @@ MongoClient.connect(url, function (err, db) {
         // do some work here with the database.
 
         //Close connection
-        db.close();
+        //db.close();
     }
 });
 
