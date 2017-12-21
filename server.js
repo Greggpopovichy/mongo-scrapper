@@ -4,12 +4,12 @@ var mongoose = require("mongoose");
 var cheerio = require("cheerio");
 var request = require('request');
 var logger = require('morgan');
-var db = require('./models');
 var PORT = process.env.PORT || 8080;
 var app = express();
 var exphbs = require("express-handlebars");
 var path = require('path');
 var mongodb = require('mongodb');
+var db = require('./models');
 
 
 app.use(logger("dev"));
