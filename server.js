@@ -11,7 +11,6 @@ var exphbs = require("express-handlebars");
 var path = require('path');
 var mongodb = require('mongodb');
 
-var models = require('./models');
 
 app.use(logger("dev"));
 // Use body-parser for handling form submissions
